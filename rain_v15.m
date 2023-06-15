@@ -255,10 +255,16 @@ function state_soln = rain_v15(num, filename)
 					and(LV_0(grM_new) == 5, wallflag == 0, grM_new != grM_step),
 					and(LV_0(blM_new) == 5, wallflag == 0, blM_new != blM_step)
 				));
+				# v1.1.1 shim: just saw, if Valentine lands on a pit as a result,
+				# she is still affected!
+				idx_swap_3 = find(
+					and(LV_0(grM_new) == 5, wallflag == 0, grM_new != grM_step, LV_0(blM_new) == 3)
+				);
 				tmp_new = grM_new(idx_swap);
 				grM_new(idx_swap) = blM_new(idx_swap);
 				blM_new(idx_swap) = tmp_new;
 				moveM_tmp(idx_swap) = mod(moveM_tmp(idx_swap) + 4, 8);
+				haltflag(idx_swap_3) = 1;
 				# Apply pusher
 				moveM_tmp(find(and(LV_0(grM_new) == 6, wallflag == 0, grM_new != grM_step))) = 0;
 				moveM_tmp(find(and(LV_0(grM_new) == 7, wallflag == 0, grM_new != grM_step))) = 1;

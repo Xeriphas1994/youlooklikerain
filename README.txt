@@ -66,6 +66,8 @@ My day job co-workers, for teaching me about modular programming.  Hopefully it 
 
 Jesper Schmidt Hansen, whose book _GNU Octave Beginners Guide_ (Packt Publishing, 2011) introduced me to vectorization, without which this code would be impractical on all but the most cramped levels.
 
+siddhartha77 for retro software development, which as a marginal side effect, exposed a bug in my pathfinding logic when Cornelius is swapped off of a pit.
+
 ++++++++++++
 LEGAL NOTICE
 ++++++++++++
